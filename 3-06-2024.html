@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Code Examples</title>
+    <style>
+        pre {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Code Examples</h1>
+
+    <h2>Task 1: Palindromic Primes</h2>
+    <pre><code>
+// Task 1: Write a program for palindromic primes
+// i/p : enter a number : 150
+// o/p : palindrome primes are : 2 3 5 7 11 101 131
+function palindromicprimes(n) {
+    function prime(num) {
+        if (num <= 1) {
+            return false;
+        }
+        for (var i = 2; i < num; i++) {
+            if (num % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    x = 1
+    l = []
+    while (x <= n) {
+        if (prime(x)) {
+
+            r = ''
+            for (var i of String(x)) {
+                r = i + r
+            }
+            if (+r == x) {
+                l.push(x)
+            }
+            console.log(x);
+        }
+        x++
+    }
+    return l
+}
+//console.log(palindromicprimes(150));
+    </code></pre>
+
+    <h2>Task 2: Finding Min and Max in Number Sequence</h2>
+    <pre><code>
+// Task 2: Finding the minimum and maximum numbers and identifying which is found first and second
+// i/p: enter a number : 123456789
+// o/p: min is found first and max is found second
+function minmaxfound(n) {
+    n = String(n).split("")
+    min = Math.min(...n)
+    max = Math.max(...n)
+    if (n.indexOf(min) < n.indexOf(max)) {
+        return "min is found first and max is second"
+    }
+    return "Max is found first and min is second"
+}
+//console.log(minmaxfound(123456));
+    </code></pre>
+
+    <h2>Task 3: Prime Numbers in Increasing Order</h2>
+    <pre><code>
+// Task 3: Writing a program for prime numbers in increasing order
+// i/p: enter a number : 150
+// o/p : primes in increasing order : 13 17 19 23 29 37 47 59 67 79 89 127 137 139 149
+function prime(n) {
+    if (n <= 1) {
+        return false;
+    }
+    for (var i = 2; i < n; i++) {
+        if (n % i == 0) {
+            return false;
+        }
+    }
+    return true
+}
+x=1
+n=+prompt("enter a number")
+l1=[]
+while(x<=n){
+    if(prime(x)){
+        l=String(x).split("").map(Number)
+        inc=false
+        for(var i=0;i<l.length-1;i++){
+            if(l[i]>l[i+1]){
+                inc=true;
+                break;
+            }
+        }
+        if(!(inc)){
+                l1.push(x)
+            }
+    }
+    x++
+}
+console.log(l1);
+    </code></pre>
+    <script>
+        //task:-1.Write a program for palindromic primes
+// i/p : enter a number : 150
+// o/p : palindrome primes are : 2 3 5 7 11 101 131
+function palindromicprimes(n){
+   function prime(num){
+    if(num<=1){
+        return false;
+    }
+    for(var i=2;i<num;i++){
+        if(num%i==0){
+            return false;
+        }
+    }
+    return true;
+    }
+    x=1
+    l=[]
+    while(x<=n){
+        if(prime(x)){
+
+            r=''
+            for(var i of String(x)){
+                r=i+r
+            }
+            if(+r == x){
+                l.push(x)
+            }
+            console.log(x);
+        }
+        x++
+    }
+    return l
+}
+//console.log(palindromicprimes(150));
+//2.Finding the minimum and maximum numbers and identifying which is found first and second
+
+// i/p: enter a number : 123456789
+// o/p: min is found first and max is found second
+function minmaxfound(n){
+    n=String(n).split("")
+    min=Math.min(...n)
+    max=Math.max(...n)
+    if(n.indexOf(min)<n.indexOf(max)){
+        return "min is found first and max is second"
+    }
+    return "Max is found first and min is second"
+}
+//console.log(minmaxfound(123456));
+
+// 4.Writing a program for prime numbers in increasing order
+// i/p: enter a number : 150
+// o/p : primes in increasing order : 13 17 19 23 29 37 47 59 67 79 89 127 137 139 149
+function prime(n){
+            if(n<=1){
+                return false;
+            }
+            for(var i=2;i<n;i++){
+                if(n%i==0)
+               { return false;}
+            }
+            return true
+        }
+        x=1
+        //n=+prompt("enter a number")
+        l1=[]
+        while(x<=n){
+            if(prime(x)){
+                l=String(x).split("").map(Number)
+                inc=false
+                for(var i=0;i<l.length-1;i++){
+                    if(l[i]>l[i+1]){
+                        inc=true;
+                        break;
+                    }
+                }
+                if(!(inc)){
+                        l1.push(x)
+                    }
+            }
+            x++
+        }
+        console.log(l1);
+
+        
+    </script>
+</body>
+</html>

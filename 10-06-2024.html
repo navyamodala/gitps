@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Display JavaScript Code</title>
+  <style>
+    pre {
+      background-color: #f4f4f4;
+      padding: 10px;
+      white-space: pre-wrap;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 14px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h1>JavaScript Code Example</h1>
+  
+  <h2>rotateLeft Function:</h2>
+  <pre>
+function rotateLeft(arr, positions) {
+  // Calculate the effective number of rotations
+  let n = positions % arr.length;
+  if (n < 0) {
+    n += arr.length; // handle negative rotations
+  }
+  
+  // Rotate the array left by n positions
+  for (let i = 0; i < n; i++) {
+    let firstElement = arr[0];
+    for (let j = 0; j < arr.length - 1; j++) {
+      arr[j] = arr[j + 1];
+    }
+    arr[arr.length - 1] = firstElement;
+  }
+  
+  return arr;
+}
+  </pre>
+
+  <h2>countPalindromes Function:</h2>
+  <pre>
+function isPalindrome(str) {
+  // Function to check if a string is a palindrome
+  let left = 0;
+  let right = str.length - 1;
+  while (left < right) {
+    if (str[left] !== str[right]) {
+      return false;
+    }
+    left++;
+    right--;
+  }
+  return true;
+}
+
+function countPalindromes(arr) {
+  // Function to count palindromes in the array
+  let count = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (isPalindrome(String(arr[i]))) {
+      count++;
+    }
+  }
+  return count;
+}
+  </pre>
+
+  <h2>Example Usage:</h2>
+  <pre>
+let array = [121, 123, 1331, 55, 67876];
+let palindromeCount = countPalindromes(array);
+console.log("Count of palindromes:", palindromeCount); // Output: Count of palindromes: 3
+  </pre>
+</body>
+<script>
+    function rotateLeft(arr, positions) {
+    // Calculate the effective number of rotations
+    let n = positions % arr.length;
+    if (n < 0) {
+      n += arr.length; // handle negative rotations
+    }
+    
+    // Rotate the array left by n positions
+    for (let i = 0; i < n; i++) {
+      let firstElement = arr[0];
+      for (let j = 0; j < arr.length - 1; j++) {
+        arr[j] = arr[j + 1];
+      }
+      arr[arr.length - 1] = firstElement;
+    }
+    
+    return arr;
+  }
+  
+  // Example usage:
+  let arr = [1, 2, 3, 4, 5];
+  let rotatedArray = rotateLeft(arr, 2);
+  console.log(rotatedArray); // Output: [3, 4, 5, 1, 2]
+  function isPalindrome(str) {
+    // Function to check if a string is a palindrome
+    let left = 0;
+    let right = str.length - 1;
+    while (left < right) {
+        if (str[left] !== str[right]) {
+            return false;
+        }
+        left++;
+        right--;
+    }
+    return true;
+}
+
+function countPalindromes(arr) {
+    // Function to count palindromes in the array
+    let count = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (isPalindrome(String(arr[i]))) {
+            count++;
+        }
+    }
+    return count;
+}
+
+// Example usage:
+let array = [121, 123, 1331, 55, 67876];
+let palindromeCount = countPalindromes(array);
+console.log("Count of palindromes:", palindromeCount); // Output: Count of palindromes: 3
+
+</script>
+</html>
+
+

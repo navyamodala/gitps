@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display JavaScript Code in Browser</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 20px;
+            border: 1px solid #ccc;
+            overflow-x: auto;
+        }
+        code {
+            display: block;
+            white-space: pre-wrap;
+            font-size: 14px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h2>JavaScript Code</h2>
+    <pre><code>
+//1.to print even numbers up to the range
+function even(n){
+    s = '';
+    for(var i = 1; i <= n; i++){
+        if(i % 2 == 0){
+            s += i + " ";
+        }
+    }
+    return s;
+}
+
+//2.write a Program to print sum of odd numbers in the fibonacci series
+function fibonacci(n){
+    var a = 0;
+    var b = 1;
+    var s = 0;
+    while(a < n){
+        if(a % 2 == 1){
+            s += a;
+        }
+        var c = a + b;
+        a = b;
+        b = c;
+    }
+    return s;
+}
+
+// Write a program to print the below series based on input
+// Enter a number: -10 (should not use <= operator)
+// output: -10 -9 -8 - 7 -6 - 5 - 4,,, -1
+var s = '';
+for(var i = -10; i != 0; i++){
+    s += i + "  ";
+}
+
+var s1 = '';
+for(var i = -1; i != -11; i--){
+    s1 += i + "  ";
+}
+    </code></pre>
+</body>
+<script>
+    //1.to print even numbers upto the range
+    function even(n){
+        s=''
+        for(var i=1;i<=n;i++){
+            if(i%2==0){
+                s+=i+" "
+            }
+        }
+        return s
+    }
+    //console.log(even(10));
+    //2.write a Program to print sum of odd numbers in the fibonacci series
+    function fibonacci(n){
+        a=0
+        b=1
+        s=0
+        while(a<n){
+            if(a%2==1){
+                s+=a
+            }
+            c=a+b;
+            a=b;
+            b=c;
+        }
+        return s
+    }
+    //console.log(fibonacci(5));
+//         Write a program to print the below series base don input
+// Enter a number: -10 (should not use <= operator)
+// output: -10 -9 -8 - 7 -6 - 5 - 4,,, -1
+s=''
+for(var i=-10;i!=0;i++){
+s+=i+"  "
+}
+//console.log(s);
+s1=''
+for(var i=-1;i!=-11;i--){
+s1+=i+"  "
+}
+console.log(s1);
+</script>
+</html>
+
+

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pattern Functions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            margin-bottom: 20px;
+        }
+        code {
+            display: block;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <h2>Pattern Functions in JavaScript</h2>
+
+    <h3>Pattern 1:</h3>
+    <pre>
+        <code>
+function pattern(row) {
+    var num = 1;
+    for (var i = 1; i <= row; i++) {
+        var s = '';
+        for (var j = 1; j <= i; j++) {
+            s += num + " ";
+            num++;
+        }
+        console.log(s);
+    }
+}
+pattern(5);
+        </code>
+    </pre>
+
+    <h3>Alphabet Pattern:</h3>
+    <pre>
+        <code>
+function alphapattern(row) {
+    for (var i = 1; i <= row; i++) {
+        var s = '';
+        for (var j = 1; j <= i; j++) {
+            s += String.fromCharCode(64 + j) + " ";
+        }
+        console.log(s);
+    }
+}
+alphapattern(4);
+        </code>
+    </pre>
+
+    <h3>Alphabet Sequence:</h3>
+    <pre>
+        <code>
+function alpha(row) {
+    var num = 64;
+    for (var i = 1; i <= row; i++) {
+        var s = '';
+        for (var j = 1; j <= i; j++) {
+            num++;
+            s += String.fromCharCode(num);
+        }
+        console.log(s);
+    }
+}
+alpha(4);
+        </code>
+    </pre>
+
+    <h3>Pattern with Specific Structure:</h3>
+    <pre>
+        <code>
+function patternSpecific(n) {
+    for (var i = 1; i <= n; i++) {
+        var s = "";
+        if (i === 1 || i === n) {
+            for (var j = 1; j <= n; j++) {
+                s += "* ";
+            }
+            console.log(s);
+        } else {
+            for (var j = 1; j <= n; j++) {
+                if (j === 1 || j === n) {
+                    s += "* ";
+                } else {
+                    s += "  ";
+                }
+            }
+            console.log(s);
+        }
+    }
+}
+patternSpecific(5);
+        </code>
+    </pre>
+
+    <h3>Pattern 2:</h3>
+    <pre>
+        <code>
+function pattern2(n) {
+    for (var i = 1; i <= n; i++) {
+        var s = "";
+        if (i !== n) {
+            for (var j = 1; j <= i; j++) {
+                if (j === 1 || j === i) {
+                    s += "* ";
+                } else {
+                    s += "  ";
+                }
+            }
+            console.log(s);
+        } else {
+            for (var j = 1; j <= i; j++) {
+                s += "* ";
+            }
+            console.log(s);
+        }
+    }
+}
+pattern2(5);
+        </code>
+    </pre>
+
+    <h3>Pattern 3:</h3>
+    <pre>
+        <code>
+function pattern3(n) {
+    for (var i = 1; i <= n; i++) {
+        var s = "";
+        if (i == n) {
+            for (var j = 1; j <= i; j++) {
+                s += "* ";
+            }
+            console.log(s);
+        } else if (i == 1) {
+            for (var j = 1; j <= n; j++) {
+                j == n ? s += "* " : s += "  ";
+            }
+            console.log(s);
+        } else {
+            for (var j = 1; j <= n; j++) {
+                if (j == n - i + 1 || j == n) {
+                    s += "* ";
+                } else {
+                    s += "  ";
+                }
+            }
+            console.log(s);
+        }
+    }
+}
+pattern3(5);
+        </code>
+    </pre>
+
+</body>
+<script>
+    // 1st problem
+    //1
+    //2 3 
+    //4 5 6
+    //7 8 9 10 
+    function pattern(row=+prompt("enter a number")){
+        num=1
+        for(var i=1;i<row;i++){
+            s=''
+            for(var j=1;j<=i;j++){
+                s+=num+" ";
+                num++;
+            }
+            console.log(s);
+        }
+    }
+    //pattern()
+    //a 
+    //b b
+    //c c c 
+    //d d d d
+    function alphapattern(row=+prompt("enter a number")){
+        for(var i=1;i<=row;i++){
+            s=''
+            for(var j=1;j<=i;j++){
+                s+=String.fromCharCode(64+j)+" "
+            }
+            console.log(s);
+        }
+    }
+    //alphapattern()
+    // a
+    // b c
+    // d c e 
+    // f g h i
+    function alpha(row=+prompt("enter a number")){
+        num=64
+        for(var i=1;i<=row;i++){
+            var s=''
+            for(var j=1;j<=i;j++){
+                num++
+                s+=String.fromCharCode(num);
+            }
+            console.log(s);
+        }
+    }
+    // alpha()
+    //a
+    //b b
+    //c c c
+    //d d d d
+    function alpha1(row=+prompt("enter a number")){
+        for(var i=1;i<=row;i++){
+            var s=''
+            for(var j=1;j<=i;j++){
+                s+=String.fromCharCode(64+i)+" ";
+            }
+            console.log(s);
+        }
+    }
+    //alpha1()
+    //pattern like this
+    //# # # # # #
+    //#         #
+    //#         #
+    //#         #
+    //# # # # # #
+    function pattern(n){
+        for(i=1;i<=n;i++){
+            s=""
+            if (i===1 || i==n){
+                for(j=1;j<=n;j++){
+                    s+="* "
+                }
+                
+                console.log(s);
+            }
+            else{
+                for(j=1;j<=n;j++){
+                    if(j===1 || j===n){
+                        s+="* "
+                    }
+                    else{
+                        s+="  "
+                    }
+                }
+                console.log(s);
+            }
+        }
+    }
+    //pattern(5)
+    //#
+    //# #
+    //#    #
+    //#      #
+    //# # # #  #
+    function pattern2(n){
+        for(i=1;i<=n;i++){
+              s=""
+            if(i!==n){
+                for(j=1;j<=i;j++){
+                    if(j===1 || j===i){
+                        s+="* "
+                    }
+                    else{
+                        s+="  "
+                    }
+                }
+                console.log(s)
+            }
+            else{
+                for(j=1;j<=i;j++){
+                    s+="* "
+                }
+                console.log(s)
+            }
+        }
+    }
+    //pattern2(5)
+//         * 
+//       * * 
+//     *   * 
+//   *     * 
+// * * * * * 
+function pattern2(n){
+        for(i=1;i<=n;i++){
+              s=""
+           if(i==n){
+                for(j=1;j<=i;j++){
+                    s+="* "
+                }
+                console.log(s)
+            }
+            else if(i==1){
+                for(j=1;j<=n;j++){
+                    j==n ? s+="* " :s+="  "
+                }
+                console.log(s)
+            }
+            else{
+                for(j=1;j<=n;j++){
+                    if(j==n-i+1 || j==n){
+                        s+="* "
+                    }
+                    else{
+                        s+="  "
+                    }
+                }
+                console.log(s)
+            }
+        }
+    }
+    //pattern2(5)
+</script>
+</html>

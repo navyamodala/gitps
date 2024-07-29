@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pattern Problems</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            margin-bottom: 20px;
+        }
+        code {
+            display: block;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <h2>JavaScript Patterns</h2>
+
+    <h3>Pattern 1:</h3>
+    <pre>
+        <code>
+function pattern1(n) {
+    for (var i = 1; i <= n; i++) {
+        var s = '';
+        for (var k = i - 1; k >= 1; k--) {
+            s += " ";
+        }
+        for (var j = n - i + 1; j >= 1; j--) {
+            s += "* ";
+        }
+        console.log(s);
+    }
+}
+pattern1(5);
+        </code>
+    </pre>
+
+    <h3>Pattern 2:</h3>
+    <pre>
+        <code>
+function pattern2(n) {
+    for (var i = 1; i <= n; i++) {
+        var s = '';
+        for (var j = 1; j <= i; j++) {
+            if (i % 2 == 1) {
+                if (j % 2 == 1) {
+                    s += '1 ';
+                } else {
+                    s += '0 ';
+                }
+            } else {
+                if (j % 2 == 0) {
+                    s += '1 ';
+                } else {
+                    s += '0 ';
+                }
+            }
+        }
+        console.log(s);
+    }
+}
+pattern2(4);
+        </code>
+    </pre>
+
+    <h3>Pattern 3:</h3>
+    <pre>
+        <code>
+function pattern3(n) {
+    for (var i = 1; i <= n; i++) {
+        var s = '';
+        for (var j = 1; j <= n; j++) {
+            if (i == 1 || i == n) {
+                s += "* ";
+            } else {
+                j == 1 || j == n ? s += "* " : s += "  ";
+            }
+        }
+        console.log(s);
+    }
+}
+pattern3(5);
+        </code>
+    </pre>
+
+    <h3>Pattern 4:</h3>
+    <pre>
+        <code>
+function pattern4(n) {
+    var num = 1;
+    for (var i = 1; i <= n; i++) {
+        var s = '';
+        for (var j = 1; j <= i; j++) {
+            s += num + " ";
+            num += 2;
+        }
+        console.log(s);
+    }
+}
+pattern4(4);
+        </code>
+    </pre>
+
+    <h3>Pattern 5:</h3>
+    <pre>
+        <code>
+function pattern5(n) {
+    var num = 1;
+    var ar = [];
+    for (var i = 1; i <= n; i++) {
+        var s = [];
+        for (var j = 1; j <= n; j++) {
+            if (j < i) {
+                s.push(" ");
+            } else {
+                s.push(num);
+                num += 2;
+            }
+        }
+        ar.push(s);
+    }
+  
+    for (var i = 0; i < n; i++) {
+        var r = '';
+        for (var j = 0; j < n; j++) {
+            r += ar[j][i] + ' ';
+        }
+        console.log(r);
+    }
+}
+pattern5(4);
+        </code>
+    </pre>
+
+</body>
+<script>
+//1st problem
+// * * * * *
+//  * * * *
+//   * * *
+//    * * 
+//     *
+function pattern1(n){
+   for(var i=1;i<=n;i++){
+    s=''
+    for(var k=i-1;k>=1;k--){
+        s+=" "
+    }
+    for(var j=n-i+1;j>=1;j--){
+        s=s+"* "
+    }
+    console.log(s);
+   }
+}
+pattern1(5)
+//2nd problem
+// 1
+// 0 1
+// 1 0 1
+// 0 1 0 1  
+function pattern2(n){
+    for (var i=1;i<=n;i++){
+        s=''
+        for(var j=1;j<=i;j++){
+            if(i%2==1){
+                if(j%2==1){
+                    s+='1 '
+                }
+                else{
+                    s+='0 '
+                }
+            }
+            else{
+                if(j%2==0){
+                    s+='1 '
+                }
+                else{
+                    s+='0 '
+                }
+            }               
+        }
+        console.log(s);
+    }
+} 
+pattern2(4)
+//3rd problem
+// * * * *
+// *     *
+// *     *
+// * * * *
+function pattern3(n){
+    for(var i=1;i<=n;i++){
+        s=''
+        for(var j=1;j<=n;j++){
+            if(i==1 || i==n){
+                s+="* "
+            }
+            else{
+                j==1 || j==n ? s+="* " : s+="  "
+            }
+        }
+        console.log(s);
+    }
+}
+pattern3(5)
+// sum of digits 7632
+// n=7632
+// //console.log(typeof String(n));
+// s=0
+// var sum=String(n).split("").map(Number).reduce((acc,ele)=> acc+=ele,0)
+// //console.log(sum);
+// var n=7632
+// var a=String(n).split("").map(Number)
+// a.map((a,b,c)=>{
+//         s+=a
+// })
+// console.log(s);
+function pattern4(n){
+num=1
+for(i=1;i<=n;i++){
+    s=''
+    for(var j=1;j<=i;j++){
+        s+=num+" "
+        num+=2
+    }
+    console.log(s)
+}
+}
+pattern4(4)
+function pattern5(n){
+num=1
+ar=[]
+for(var i=1;i<=n;i++){
+    s=[]
+    for(var j=1;j<=n;j++){
+        if(j<i){
+            s.push(" ")
+        }
+        else{
+            s.push(num)
+            num+=2
+        }
+    }
+    ar.push(s)
+}
+
+for(var i=0;i<n;i++){
+      r=''
+    for(var j=0;j<n;j++){
+        r+=ar[j][i]+' ';
+    }
+    console.log(r);
+}
+}
+pattern5(4)
+</script>
+</html>

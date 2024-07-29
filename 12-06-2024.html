@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transpose Matrix JavaScript Function</title>
+  <style>
+    pre {
+      background-color: #f4f4f4;
+      padding: 10px;
+      white-space: pre-wrap;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 14px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h1>Transpose Matrix JavaScript Function</h1>
+  
+  <h2>transpose Function:</h2>
+  <pre>
+function transpose(matrix){
+    let trans = [];
+    for(var i = 0; i &lt; matrix.length; i++){
+        let temp = [];
+        for(var j = 0; j &lt; matrix[i].length; j++){
+            temp.push(matrix[j][i]);                    
+        }
+        trans.push(temp);
+    }
+    return trans;
+}
+  </pre>
+
+  <h2>Example Usage:</h2>
+  <pre>
+// Example usage of transpose function
+console.log(transpose([[1,2,3],[2,3,4],[6,7,8]]));
+  </pre>
+
+</body>
+<script>
+    function transpose(matrix){
+let trans=[]
+for(var i=0;i<matrix.length;i++){
+temp=[]
+for(var j=0;j<matrix[i].length;j++){
+   temp.push(matrix[j][i])                    
+}
+trans.push(temp)
+}
+return trans
+}
+console.log(transpose([[1,2,3],[2,3,4],[6,7,8]]));
+
+</script>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display JavaScript Functions and Examples</title>
+    <style>
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            white-space: pre-wrap;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        task:-) Write a js program to print lower case first followed by upper case letters.
+input : Enter a string: I am Good,<br>
+amoodIG.<br>
+
+2) Write a js program to print one lower letter next one upper letter and so.. on.
+
+input: Enter a string: I am Good<br>
+aImGood
+ include this questions also in it
+    </p>
+    <h1>JavaScript Functions and Example</h1>
+
+    <h2>swapcase Function:</h2>
+    <pre>
+function swapcase(str=prompt("enter a string")){
+    var rstr='';
+    for(var i of str){
+        if(i.charCodeAt()>=65 && i.charCodeAt()<=90){
+            rstr+= i.toLowerCase();
+        }
+        else if(i.charCodeAt()>=97 && i.charCodeAt()<=122){
+            rstr+= i.toUpperCase();
+        }
+        else{
+            rstr+= i;
+        }
+    }
+    return rstr;
+}
+    </pre>
+
+    <h2>lowerupper Function:</h2>
+    <pre>
+function lowerupper(a=prompt("enter a string")){
+    var l='';
+    var u='';
+    for(var i of a){
+        if(i.toUpperCase() === i){
+            l+= i;
+        }
+        else if(i.toUpperCase() === i){
+            u+= i;
+        }
+    }
+    return l + u;
+}
+    </pre>
+
+    <h2>lowerupper1 Function:</h2>
+    <pre>
+function lowerupper1(a=prompt("enter a string")){
+    var l='';
+    var u='';
+    var e=0;
+    var r='';
+    for(var i of a){
+        if(i.charCodeAt()>=65 && i.charCodeAt()<=90){
+            u+= i;
+        }
+        else if(i.charCodeAt()>=65 && i.charCodeAt()<=90){
+            l+= i;
+        }
+    }
+    e= l.length>u.length ? l.length : u.length;
+    for(var i=0;i<e;i++){
+        if(l[i]){
+            r+= l[i];
+        }
+        if(u[i]){
+            r+= u[i];
+        }
+    }
+    return r;
+}
+    </pre>
+
+    <h2>Example Statement:</h2>
+    <pre>
+console.log(":".toUpperCase());
+    </pre>
+
+</body>
+<script>
+     function swapcase(str=prompt("ente a string")){
+            var rstr=''
+            for(var i of str){
+                if(i.charCodeAt()>=65 && i.charCodeAt()<=90){
+                    //rstr+=String.fromCharCode(i.charCodeAt()+32);
+                    rstr+= i.toLowerCase();
+                }
+                else if(i.charCodeAt()>=97 && i.charCodeAt()<=122){
+                    //rstr+=String.fromCharCode(i.charCodeAt()-32);
+                    rstr+=i.toUpperCase();
+                }
+                else{
+                    rstr+=i
+                }
+            }
+            return rstr
+        }
+      //console.log(swapcase());
+      //1.write a program to print lowercase first and uppersecond
+      function lowerupper(a=prompt("enter a string")){
+        var l=''
+        var u=''
+        for(var i of a){
+            if(i.toUpperCase()==i){
+                l+=i
+            }
+            else if(i.toUpperCase()==i){
+                u+=i
+            }
+        }
+        return l+u
+      }
+      //console.log(lowerupper());
+      function lowerupper1(a=prompt("enter a string")){
+        var l=''
+        var u=''
+        var e=0
+        r=''
+        for(var i of a){
+            if(i.charCodeAt()>=65 && i.charCodeAt()<=90){
+                u+=i
+            }
+            else if(i.charCodeAt()>=65 && i.charCodeAt()<=90){
+                l+=i
+            }
+        }
+        e= l.length>u.length ? l.length : u.length
+        for(var i=0;i<e;i++){
+            if(l[i]){
+                r+=l[i]
+            }
+            if(u[i]){
+                r+=u[i]
+            }
+        }
+        return r
+      }
+ //console.log(lowerupper1());
+ console.log(":".toUpperCase());
+    </script>
+</script>
+</html>

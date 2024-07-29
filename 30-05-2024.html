@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 20px;
+            border: 1px solid #ccc;
+            overflow-x: auto;
+            margin-bottom: 20px;
+        }
+        code {
+            display: block;
+            white-space: pre-wrap;
+            font-size: 14px;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>JavaScript Code</h2>
+
+    <h3>1. Reverse of a Number</h3>
+    <pre><code>
+        // Write a program to print the reverse of a number
+        // input: 218
+        // output: 812
+
+        // input:-210
+        // output: -12
+        function reverse(n){
+            s = 0;
+            while (n !== 0){
+                r = n % 10;
+                s = s * 10 + r;
+                n = n / 10;
+                n = Math.trunc(n);
+            }
+            return s;
+        }
+        //console.log(reverse(-210));
+    </code></pre>
+
+    <h3>2. Min, Max, and Rest of the Numbers</h3>
+    <pre><code>
+        // Write a program to print min, max, and followed by rest of the numbers
+        // input: 13675
+        // output: 17365
+        function mmr(s){
+            min = Math.min(...String(s).split(""));
+            max = Math.max(...String(s).split(""));
+            rs = '' + min + max;
+            for(var i of String(s)){
+                if(!rs.includes(i)){
+                    rs += i;
+                }
+            }
+            return rs;
+        }
+        //console.log(mmr(12345));
+    </code></pre>
+
+    <h3>3. Palindrome Check</h3>
+    <pre><code>
+        // Write a program to check whether a number is palindrome or not.
+        // input: 121
+        // output: 121 is palindrome
+
+        // input: 467
+        // output: 467 is not a palindrome
+        function palindrome(n){
+            s = 0;
+            num = n;
+            while (n != 0){
+                r = n % 10;
+                s = s * 10 + r;
+                n = n / 10;
+                n = Math.trunc(n);
+            }
+            return s == num ? "Palindrome" : "Not Palindrome";
+        }
+        //console.log(palindrome(128));
+
+        function palindrome2(n){
+            s = '';
+            for(var i of String(n)){
+                s = i + s;
+            }
+            
+            return n == +s ? "palindrome" : 'not palindrome';
+        }
+        //console.log(palindrome2(121));
+    </code></pre>
+
+    <h3>4. Unique Number Check</h3>
+    <pre><code>
+        // Write a program to print true if the number is unique else print false if it contains duplicates
+        // input: 1211
+        // output: False
+
+        // input: 453
+        // output: True
+        function unique(s){
+            n1 = new Set(String(s)).size;
+            n2 = String(s).length;
+            return n1 == n2 ? "unique" : "not unique";
+        }
+        //console.log(unique(1234));
+
+        function unique2(n){
+            n1 = String(n).split("");
+            for(var i of n1){
+                if(n1.count(i) > 1){
+                    return "not unique";
+                }
+            }
+            return unique;
+        }
+        //console.log(unique(12342));
+    </code></pre>
+
+    <h3>5. Factorial Calculation</h3>
+    <pre><code>
+        // Write a program to print the below expression for the given number (Factorial)
+        // input: 5
+        // 5*4*3*2*1=120
+        function factorial(n){
+            r = 1;
+            for (i = 1; i <= n; i++){
+                r *= i;
+            }
+            return r;
+        }
+        console.log(factorial(5));
+    </code></pre>
+
+    <script>
+          // Write a program to print the reverse of a number
+// input: 218
+// output: 812
+
+
+// input:-210
+// output: -12
+function reverse(n){
+    s=0
+    while (n!==0){
+        r=n%10
+        s=s*10+r
+        n=n/10
+        n=Math.trunc(n)
+    }
+    return s
+}
+//console.log(reverse(-210));
+// 2) Write a program to print min,max and followed by rest of the numbers
+
+
+// input: 13675
+// output: 17365
+function  mmr(s){
+    min=Math.min(...String(s).split(""))
+    max=Math.max(...String(s).split(""))
+    rs=''+min+max
+    for(var i of String(s)){
+        if(!rs.includes(i)){
+            rs+=i
+        }
+    }
+    return rs
+}
+//console.log(mmr(12345));
+// 3) Write a program to check whether a number is palindrome or not.
+
+
+// input: 121
+// output: 121 is palindrome
+
+
+// input: 467
+// output: 467 is not a palindrome
+function palindrome(n){
+    s=0
+    num=n
+    while (n!=0){
+        r=n%10
+        s=s*10+r
+        n=n/10
+        n=Math.trunc(n)
+    }
+    return s==num ? "Palindrome" : "Not Palindrome"
+}
+//console.log(palindrome(128));
+function palindrome2(n){
+    s=''
+    for(var i of String(n)){
+        s=i+s
+    }
+    
+    return n==+s ? "palindrome" :'not palindrome'
+}
+//console.log(palindrome2(121));
+
+
+// task:-1) Write a program to print true if the number is unique else print false if it contains duplicates
+
+// input: 1211
+// output: False
+
+// input: 453
+// output: True
+function unique(s){
+    n1=new Set(String(s)).size
+    n2=String(s).length
+    return n1==n2 ? "unique" : "not unique"
+}
+//console.log(unique(1234));
+function unique2(n){
+    n1=String(n).split("")
+    for(var i of n1){
+        if(n1.count(i)>1){
+            return "not unique"
+        }
+    }
+    return unique
+}
+//console.log(unique(12342));
+// 2) Write a program to print the below expression for the given number (Factorial)
+
+// input: 5
+
+// 5*4*3*2*1=120
+function factorial(n){
+    r=1
+    for (i=1;i<=n;i++){
+        r*=i
+    }
+    return r
+}
+console.log(factorial(5));
+
+
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Display JavaScript Functions</title>
+  <style>
+    pre {
+      background-color: #f4f4f4;
+      padding: 10px;
+      white-space: pre-wrap;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 14px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h1>JavaScript Functions Example</h1>
+  
+  <h2>underscore Function:</h2>
+  <pre>
+//to remove duplicates and insert _ at the duplicate place
+function underscore(arr){
+    for(var i=0;i&lt;arr.length;i++){
+        if(arr[i] === arr[i+1]){
+            arr.splice(i,1);
+            i--;
+        }
+    }
+    return arr;
+}
+  </pre>
+
+  <h2>checkorder Function:</h2>
+  <pre>
+//to check whether an array is in sorted order or not
+//[2,4,5,6]--returns ascending order
+//[7,5,4,3]--returns descending order
+function checkorder(arr){
+    var asc = true;
+    var desc = true;
+    for(var i=0;i&lt;arr.length-1;i++){
+        for(var j=i+1;j&lt;arr.length;j++){
+            if(asc !== false){
+                if(arr[i] > arr[j]){
+                    asc = false;
+                }
+            }
+            if(desc !== false){
+                if(arr[i] < arr[j]){
+                    desc = false;
+                }
+            }
+        }
+    }
+    return asc ? "array is in ascending order" : desc ? "descending order" : "not in order";
+}
+  </pre>
+
+  <h2>Example Usage:</h2>
+  <pre>
+// Example usage of checkorder function
+console.log(checkorder([2, 4, 5, 6])); // Output: "array is in ascending order"
+console.log(checkorder([7, 5, 4, 3])); // Output: "descending order"
+  </pre>
+
+</body>
+<script>
+    //to remove duplicates and insert _ at the duplicate place
+    function underscore(arr){
+            for(var i=0;i<arr.length;i++){
+                if(arr[i] === arr[i+1]){
+                    arr.splice(i,1);
+                    i--;
+                }
+            }
+            return arr
+        }
+
+//console.log(underscore([11,22,22,22,33,444]));
+//tocheck whether an array is in sorted order or not
+//[2,4,5,6]--returns ascending order
+//[7,5,4,3]--returns descending order
+function checkorder(arr=prompt("enter array values :").split(" ").map(Number)){
+    asc=true
+    desc=true
+    for(var i=0;i<arr.length-1;i++){
+        for(var j=i+1;j<arr.length;j++){
+            if(asc!= false){
+                if(arr[i]>arr[j]){
+                    asc=false
+                }
+            }
+            if(desc!= false){
+                if(arr[i]<arr[j]){
+                    desc=false
+                }
+            }
+        }
+    }
+    console.log("the given array is : "+ arr)
+    return asc? "array is in ascending order" : desc ? "descending order ": "not in order"
+
+}
+// console.log(checkorder());
+// console.log(checkorder());
+// console.log(checkorder());
+</script>
+</html>

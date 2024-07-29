@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display JavaScript Code</title>
+    <style>
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ccc;
+            white-space: pre-wrap; /* Ensures that text wraps */
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <h2>JavaScript Code:</h2>
+    <pre>
+function findPairs(arr, target) {
+    let pairs = [];
+
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = i + 1; j < arr.length; j++) {
+            if (arr[i] + arr[j] === target) {
+                pairs.push([arr[i], arr[j]]);
+            }
+        }
+    }
+
+    return pairs;
+}
+
+function printPairs(arr, target) {
+    let pairs = findPairs(arr, target);
+    console.log("Pairs that sum to " + target + ":");
+    for (let pair of pairs) {
+        console.log(pair.join(' '));
+    }
+}
+
+// Example usage:
+let input = [2, 4, 6, 5, 1];
+let input2 = 6;
+printPairs(input, input2);
+
+function countPairs(arr) {
+    let pairCount = 0;
+    let countMap = {}; // Object to store frequency of each element
+
+    // Count occurrences of each element
+    arr.forEach(element => {
+        if (countMap[element]) {
+            countMap[element]++;
+        } else {
+            countMap[element] = 1;
+        }
+    });
+
+    // Calculate pairs from frequencies
+    for (let key in countMap) {
+        pairCount += Math.floor(countMap[key] / 2);
+    }
+
+    return pairCount;
+}
+
+// Example usage:
+let inputArray = [10, 10, 20, 30, 20, 20];
+let numberOfPairs = countPairs(inputArray);
+console.log(`Number of pairs: ${numberOfPairs}`);
+    </pre>
+</body>
+<script>
+    function findPairs(arr, target) {
+let pairs = [];
+
+for (let i = 0; i < arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+        if (arr[i] + arr[j] === target) {
+            pairs.push([arr[i], arr[j]]);
+        }
+    }
+}
+
+return pairs;
+}
+
+function printPairs(arr, target) {
+let pairs = findPairs(arr, target);
+console.log("output:");
+for (let pair of pairs) {
+    console.log(pair.join(' '));
+}
+}
+
+// Example usage:
+let input = [2, 4, 6, 5, 1];
+let input2 = 6;
+
+printPairs(input, input2);
+function countPairs(arr) {
+let pairCount = 0;
+let countMap = {}; // Object to store frequency of each element
+
+// Count occurrences of each element
+arr.forEach(element => {
+    if (countMap[element]) {
+        countMap[element]++;
+    } else {
+        countMap[element] = 1;
+    }
+});
+
+// Calculate pairs from frequencies
+for (let key in countMap) {
+    pairCount += Math.floor(countMap[key] / 2);
+}
+
+return pairCount;
+}
+
+// Example usage:
+let inputArray = [10, 10, 20, 30, 20, 20];
+let numberOfPairs = countPairs(inputArray);
+console.log(`Number of pairs: ${numberOfPairs}`);
+
+
+
+</script>
+</html>
+
+
+    
